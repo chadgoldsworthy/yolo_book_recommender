@@ -17,7 +17,7 @@ and returns a list of cropped images. Setting ```visualise=True```, the followin
 model, class_names = model_init(config, weights, coco_names)
 cropped = crop_books(model, img, visualise=True) 
 ```
-![book bounding boxes and cropped book](img.png)
+![book bounding boxes and cropped book](https://github.com/chadgoldsworthy/yolo_book_recommender/blob/main/readme_imgs/crop_books.png?raw=true)
 
 These cropped images are then passed into the ```extract_books()``` function which uses pytesseract to extract the text text from the images. Setting ```visualise=True```, the following image gives an example. 
 
@@ -25,7 +25,7 @@ These cropped images are then passed into the ```extract_books()``` function whi
 ISBNs, metas, authors = extract_books(cropped, visualise=True)
 ```
 
-![pytesseract predictions on cropped book](img_1.png)
+![pytesseract predictions on cropped book](https://github.com/chadgoldsworthy/yolo_book_recommender/blob/main/readme_imgs/extract_books.png?raw=true)
 
 
 Following this, the text is cleaned > converted to ISBN > back to author and meta data > searched via Google Books API > recommendation collection > and so on. Please refer to the notebook for the full implementation. 
